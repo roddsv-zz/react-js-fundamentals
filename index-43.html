@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="chrome">
+    <title>React Básico</title>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+    
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        class App extends React.Component {
+            
+            /*Etapas do ciclo de vida de um Component
+            1. Initialization
+            2. Mounting
+            3. Update
+            4. Unmounting
+
+
+
+            */
+            constructor(){
+                super()
+                this.state = {
+                    nome: "Rodrigo"
+                }
+                console.log("constructor")
+            }
+
+            componentDidMount(){
+                console.log("Montado")
+            }
+            
+            alterar = () => {
+                this.setState({nome: "Rodrigo Soares"})
+            }
+
+            /*Alterar é um exemplo de updating.*/
+
+            render(){
+                console.log("render")
+                return(
+                    <div>
+                        Olá {this.state.nome}
+                        <div>
+                            <button onClick={this.alterar}>Alterar</button>
+                        </div>
+                    </div>
+                )
+            }    
+        }
+        
+        
+        ReactDOM.render(
+            <App cor={true} tamanho={true} />,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+
+</html>

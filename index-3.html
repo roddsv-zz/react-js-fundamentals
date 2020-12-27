@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="chrome">
+    <title>React Básico</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        function MeuComponente() {
+            return(
+                <div>
+                    <h1>Olá React!</h1>
+                </div>
+            )
+        }
+
+        /*Isso se trata de uma function Component, a qual para ser renderizada
+        deve ser chamada dentro do ReactDOM como uma tag < nomeDaFunction/>*/
+        /*Toda tag HTML deve estar entre duas div's, pois eles devem estar dentro
+        de uma única tag.*/
+        
+        const root = document.getElementById('root')
+
+        ReactDOM.render(<MeuComponente />, root)
+    </script>
+</body>
+
+</html>
