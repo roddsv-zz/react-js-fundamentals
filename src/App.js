@@ -1,27 +1,12 @@
 import React, { Component } from 'react';
-import Child from './componentes/Child';
+import './App.css';
 
 class App extends Component {
-
-  state = {
-    nome: "Rodrigo",
-  }
-
-  Alterar = (novoNome) => {
-    this.setState({
-      nome: novoNome
-    })
-  }
 
   render() {
     return (
       <div>
-        <h3>Parent</h3>
-        <p>Nome: {this.state.nome}</p>
-        <hr />
-        
-        <Child funcaoAlterar={this.Alterar}/>
-
+        <h3 className="cor-texto">Texto da minha aplicação</h3>
       </div>
     )
   }
