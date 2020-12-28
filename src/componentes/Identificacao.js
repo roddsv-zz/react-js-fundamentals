@@ -1,24 +1,16 @@
-/*1. Importar o React
-
-2. Criar o Component
-
-3. Exportar o Component
-*/
-
 import React, { Component } from 'react';
-import Nome from './Nome';
-import Sobrenome from './Sobrenome';
 
-
-class Identificacao extends React.Component {
-    render(){
-        return(
+class Identificacao extends Component {
+    render() {
+        return (
             <div>
-                <Nome />
-                <Sobrenome />
+                <p>Nome: {this.props.nome}</p>                
+                <p>Sobrenome: {this.props.sobrenome}</p>
             </div>
-        )
+        );
     }
 }
 
-export default Identificacao
+/*Se não tiver o props aqui, não renderiza. Tem que chamar o props aqui e o state lá pra poder renderizar.*/
+
+export default Identificacao;
