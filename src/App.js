@@ -1,44 +1,19 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 
-import Navegacao from './componentes/Navegacao';
-import Home from './componentes/Home'
-import Servicos from './componentes/Servicos';
-import Contatos from './componentes/Contatos';
+const App = () => {
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+  const[Nome, setNome] = useState('Rodrigo');
 
-class App extends Component {
+  const AlterarNome = () => setNome('Rodrigo Soares') /*também pode ser usada, mas lá no setNome do button não se
+  utiliza arrowFunction.*/
 
-  render() {
-    return (
-      <Router>
-        <div>
-          <Navegacao />
-
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-
-            <Route exact path="/servicos">
-              <Servicos />
-            </Route>
-
-            <Route exact path="/contatos">
-              <Contatos />
-            </Route>
-          </Switch>
-
-        </div>
-      </Router>
-
-      /*Envolvendo todo o component dentro do Router (de div a div).*/
-      /*Para colocar uma rota devemos envolver o componente desejado dentro do <Route><ComponentDesejado /></Route>.*/
-      /*O "exact" antes do path faz com que seja renderizado some o caminho digitado no path.*/
-      /*O Switch deve ir de Route a Route.*/
-
-    )
-  }
+  return(
+    <div>
+      <p>O meu nome é: {Nome}</p>
+      <button onClick={() => AlterarNome()}>Alterar</button>
+    </div>
+  )
 }
 
+/*Ao se importar o useState e declarar o setNome ele altera o nome ao ligarmos ele ao onClick (no formato arrowFunction).*/
 export default App;
