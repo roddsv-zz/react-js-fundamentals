@@ -7,23 +7,20 @@ class App extends Component {
     nome: "Rodrigo",
   }
 
-  alterar = () => {
+  Alterar = (novoNome) => {
     this.setState({
-      nome: "Rodrigo Soares"
+      nome: novoNome
     })
   }
 
-  
   render() {
     return (
       <div>
         <h3>Parent</h3>
-        <button onClick={this.alterar}>Alterar</button>
-
-
+        <p>Nome: {this.state.nome}</p>
         <hr />
         
-        <Child nome={this.state.nome}/>
+        <Child funcaoAlterar={this.Alterar}/>
 
       </div>
     )
